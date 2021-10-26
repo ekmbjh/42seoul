@@ -14,7 +14,7 @@
 
 int		ft_ultimate_range(int **range, int min, int max)
 {
-	int	memory_in_need;
+	int	size;
 	int	index;
 
 	if (min >= max)
@@ -22,15 +22,15 @@ int		ft_ultimate_range(int **range, int min, int max)
 		*range = 0;
 		return (0);
 	}
-	memory_in_need = max - min - 1;
-	*range = (int *)malloc(sizeof(int) * memory_in_need);
+	size = max - min;
+	*range = (int *)malloc(sizeof(int) * size);
 	if (*range == NULL)
 		return (-1);
 	index = 0;
-	while (index <= memory_in_need)
+	while (index <= size)
 	{
 		(*range)[index] = min + index;
 		index++;
 	}
-	return (memory_in_need + 1);
+	return (size);
 }

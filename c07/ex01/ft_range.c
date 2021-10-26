@@ -19,13 +19,13 @@ int	*ft_range(int min, int max)
 
 	if (min >= max)
 		return (NULL);
-	a = (int *)malloc(sizeof(*a) * (max - min));
+	a = (int *)malloc(sizeof(int) * (max - min));
 	if (a == NULL)
 		return (NULL);
 	else
 	{
 		i = -1;
-		while (++i < max - min)
+		while (++i < (max - min))
 			a[i] = min + i;
 		return (a);
 	}
