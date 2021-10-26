@@ -11,67 +11,47 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-
 #include "ft_stock_str.h"
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	int				i;
-	int				digits_rev[1000];
-	unsigned int	unb;
-
-	if (nb == 0)
-	{
-		ft_putchar('0');
-		return ;
-	}
-	unb = nb;
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		unb = -nb;
-	}
-	i = 0;
-	while (unb > 0)
-	{
-		digits_rev[i] = unb % 10;
-		unb /= 10;
-		i++;
-	}
-	while (i > 0)
-		ft_putchar(digits_rev[--i] + '0');
-}
-
-void	ft_putstr(char *str)
+void				print_str(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		ft_putchar(str[i]);
+		write(1, &str[i], 1);
 		i++;
 	}
+	write(1, "\n", 1);
 }
 
-void	ft_show_tab(struct s_stock_str *par)
+void				recursive_print_int(int n)
 {
-	int i;
+	char temp;
+
+	temp = n % 10 + '0';
+	if (n >= 10)
+		recursive_print_int(n / 10);
+	write(1, &temp, 1);
+}
+
+void				print_int(int n)
+{
+	recursive_print_int(n);
+	write(1, "\n", 1);
+}
+
+void				ft_show_tab(struct s_stock_str *par)
+{
+	int	i;
 
 	i = 0;
-	while (par[i].str != 0)
+	while (par[i].str)
 	{
-		ft_putstr(par[i].str);
-		ft_putchar('\n');
-		ft_putnbr(par[i].size);
-		ft_putchar('\n');
-		ft_putstr(par[i].copy);
-		ft_putchar('\n');
+		print_str(par[i].str);
+		print_int(par[i].size);
+		print_str(par[i].copy);
 		i++;
 	}
 }
