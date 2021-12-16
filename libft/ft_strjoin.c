@@ -6,13 +6,13 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 10:13:55 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/10 10:13:57 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/14 13:06:15 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*newstr;
 	int		len_s1;

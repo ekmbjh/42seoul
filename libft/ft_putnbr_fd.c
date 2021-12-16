@@ -6,7 +6,7 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 15:28:37 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/10 15:28:40 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/14 13:17:07 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char str;
+	char	str;
 
 	if (fd < 0)
 		return ;

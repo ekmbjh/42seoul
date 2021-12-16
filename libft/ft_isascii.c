@@ -6,11 +6,11 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 13:48:00 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/07 13:48:21 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/14 12:45:48 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

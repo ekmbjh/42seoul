@@ -6,16 +6,16 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:30:21 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/09 14:30:23 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/14 13:20:29 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int	nbr;
-	int	sign;
+	int		nbr;
+	int		sign;
 	size_t	i;
 
 	nbr = 0;

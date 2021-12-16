@@ -6,15 +6,15 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 14:56:12 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/08 14:56:55 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/14 12:55:58 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	if ((97 <= c) && (122 >= c));
+	if ((97 <= c) && (122 >= c))
 		return (c - 32);
 	return (c);
 }

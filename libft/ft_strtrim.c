@@ -6,18 +6,18 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:55:44 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/10 13:57:11 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/14 13:00:32 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char* ft_strtrim(char const* s1, char const* set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
-	char* str;
+	char	*str;
 
 	str = 0;
 	if (s1 != 0 && set != 0)
@@ -28,18 +28,18 @@ char* ft_strtrim(char const* s1, char const* set)
 			start++;
 		while (s1[end - 1] && ft_strchr(set, s1[end - 1]) && end > start)
 			end--;
-		str = (char*)malloc(sizeof(char) * (end - start + 1));
-		if(!str)
-			return(0);
+		str = (char *)malloc(sizeof(char) * (end - start + 1));
+		if (!str)
+			return (0);
 		if (str)
 			ft_strlcpy(str, s1 + start, end - start + 1);
 	}
 	return (str);
 }
 
-int main()
+int	main(void)
 {
 	printf("%s\n", ft_strtrim("abqbc", "abc"));
 	printf("%s\n", ft_strtrim("xavocadoyz", "xyz"));
-	return 0;
+	return (0);
 }

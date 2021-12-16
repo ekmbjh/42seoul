@@ -6,15 +6,15 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 12:21:22 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/08 12:21:27 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/14 12:36:41 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				*ft_memcpy(void *dest, const void *src, size_t num)
+void	*ft_memcpy(void *dest, const void *src, size_t num)
 {
-	size_t			i;
+	size_t	i;
 
 	if (!num || dest == src)
 		return (dest);

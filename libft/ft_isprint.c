@@ -6,11 +6,11 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:08:03 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/07 14:08:06 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/14 12:24:27 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

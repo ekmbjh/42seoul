@@ -6,11 +6,11 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 13:46:37 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/07 13:47:44 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/14 12:23:55 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if (((65 <= c) && (90 >= c)) || ((97 <= c) && (122 >= c)))
 		return (1);
