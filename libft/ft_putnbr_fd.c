@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 15:28:37 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/14 13:17:07 by junbaek          ###   ########.fr       */
+/*   Created: 2021/12/20 10:39:06 by junbaek           #+#    #+#             */
+/*   Updated: 2021/12/20 10:39:07 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	str;
 
-	if (fd < 0)
-		return ;
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
+		ft_putnbr_fd(n / 10, fd);
+		write(fd, "8", 1);
 		return ;
 	}
-	if (n < 0)
+	else if (n < 0)
 	{
 		write(fd, "-", 1);
 		n *= -1;

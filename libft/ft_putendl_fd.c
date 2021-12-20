@@ -6,16 +6,15 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 15:05:38 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/10 15:05:39 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/20 10:24:05 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (!(s) || fd < 0)
-		return ;
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

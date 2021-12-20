@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 11:37:47 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/14 13:01:06 by junbaek          ###   ########.fr       */
+/*   Created: 2021/12/17 10:21:26 by junbaek           #+#    #+#             */
+/*   Updated: 2021/12/17 10:21:28 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,21 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
+	size_t	c;
 
-	if (*little == '\0')
+	if (little[0] == '\0')
 		return ((char *)big);
-	while (*big != '\0' && len-- > 0)
+	i = 0;
+	while (big[i] != '\0' && i < len)
 	{
-		i = 0;
-		while (*(big + i) == *(little + i) && i < len)
+		c = 0;
+		while ((big[i + c] == little[c]) && (i + c) < len)
 		{
-			i++;
-			if (*(little + i) == '\0')
-				return ((char *)big);
+			if (little[c + 1] == '\0')
+				return ((char *)(&big[i]));
+			c++;
 		}
-		big++;
+		i++;
 	}
-	return (0);
+	return (NULL);
 }

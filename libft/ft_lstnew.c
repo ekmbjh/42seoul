@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 14:11:43 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/16 11:54:55 by junbaek          ###   ########.fr       */
+/*   Created: 2021/12/20 12:15:35 by junbaek           #+#    #+#             */
+/*   Updated: 2021/12/20 12:15:36 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t num)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*new;
 
-	i = 0;
-	if (dest == NULL && src == NULL)
+	new = (t_list *)malloc(sizeof(t_list));
+	if (new == NULL)
 		return (NULL);
-	if (dest == src || num == 0)
-		return (dest);
-	if (dest < src)
-	{
-		while (i < num)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
-	else
-	{
-		i = num;
-		while (i)
-		{
-			((unsigned char *)dest)[i - 1] = ((unsigned char *)src)[i - 1];
-			i--;
-		}
-	}
-	return (dest);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

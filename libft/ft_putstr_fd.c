@@ -6,7 +6,7 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 14:47:45 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/10 14:47:47 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/20 14:34:32 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (!(s) || fd < 0)
+	int	i;
+
+	if (!s)
 		return ;
-	write(fd, s, ft_strlen(s));
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }

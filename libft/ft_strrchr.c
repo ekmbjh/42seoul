@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 15:46:36 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/14 13:00:48 by junbaek          ###   ########.fr       */
+/*   Created: 2021/12/20 15:19:15 by junbaek           #+#    #+#             */
+/*   Updated: 2021/12/20 15:19:17 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	s_len;
+	int		len;
+	char	ch;
 
-	s_len = ft_strlen(s);
-	while (s_len != '\0' && s[s_len] != c)
-		s_len--;
-	if (s[s_len] == c)
-		return ((char *) s + s_len);
-	return (0);
+	ch = (unsigned char)c;
+	len = ft_strlen((char *)s);
+	if (ch == '\0')
+		return ((char *)(&s[len]));
+	while (--len >= 0)
+	{
+		if (s[len] == ch)
+			return ((char *)(&s[len]));
+	}
+	return (NULL);
 }

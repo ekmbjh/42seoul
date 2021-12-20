@@ -6,19 +6,14 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 12:05:19 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/14 12:23:13 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/16 16:21:24 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*dest;
-	size_t			i;
-
-	dest = s;
-	i = 0;
-	while (i++ < n)
-		*dest++ = 0;
+	ft_memset(s, 0, n);
 }

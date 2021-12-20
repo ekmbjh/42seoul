@@ -6,7 +6,7 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 14:44:47 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/14 13:17:21 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/20 14:34:06 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0)
-		return ;
 	write(fd, &c, 1);
 }

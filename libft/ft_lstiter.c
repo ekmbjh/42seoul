@@ -1,42 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 14:11:43 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/16 11:54:55 by junbaek          ###   ########.fr       */
+/*   Created: 2021/12/20 15:05:31 by junbaek           #+#    #+#             */
+/*   Updated: 2021/12/20 15:05:44 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t num)
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	i;
-
-	i = 0;
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	if (dest == src || num == 0)
-		return (dest);
-	if (dest < src)
+	while (lst)
 	{
-		while (i < num)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
+		f(lst->content);
+		lst = lst->next;
 	}
-	else
-	{
-		i = num;
-		while (i)
-		{
-			((unsigned char *)dest)[i - 1] = ((unsigned char *)src)[i - 1];
-			i--;
-		}
-	}
-	return (dest);
 }
