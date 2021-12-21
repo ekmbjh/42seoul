@@ -6,13 +6,13 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:56:30 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/20 14:57:24 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/21 09:12:56 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 

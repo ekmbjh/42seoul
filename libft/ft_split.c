@@ -6,13 +6,13 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 15:29:02 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/20 15:47:16 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/21 09:16:33 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char			**ft_malloc_error(char **tab)
+static char	**ft_malloc_error(char **tab)
 {
 	unsigned int	i;
 
@@ -53,9 +53,10 @@ static unsigned int	ft_get_nb_strs(char const *s, char c)
 	return (cnt_str);
 }
 
-static void			ft_get_next_str(char **next_str, unsigned int *next_str_len, char c)
+static void	ft_get_next_str(char **next_str, unsigned int *next_str_len,
+	char c)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	*next_str += *next_str_len;
 	*next_str_len = 0;
@@ -71,7 +72,7 @@ static void			ft_get_next_str(char **next_str, unsigned int *next_str_len, char 
 	}
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char			**tab;
 	char			*next_str;
@@ -82,7 +83,8 @@ char				**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	cnt_str = ft_get_nb_strs(s, c);
-	if (!(tab = (char **)malloc(sizeof(char *) * (cnt_str + 1))))
+	tab = (char **)malloc(sizeof(char *) * (cnt_str + 1));
+	if (!tab)
 		return (NULL);
 	i = 0;
 	next_str = (char *)s;
@@ -90,7 +92,8 @@ char				**ft_split(char const *s, char c)
 	while (i < cnt_str)
 	{
 		ft_get_next_str(&next_str, &next_str_len, c);
-		if (!(tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1))))
+		tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1));
+		if (!tab[i])
 			return (ft_malloc_error(tab));
 		ft_strlcpy(tab[i], next_str, next_str_len + 1);
 		i++;

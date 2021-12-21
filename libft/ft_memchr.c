@@ -6,7 +6,7 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 10:45:53 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/17 10:13:02 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/21 09:05:59 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	str = (unsigned char *)s;
 	ch = (unsigned char)c;
-
 	i = 0;
 	while (i < n)
 	{

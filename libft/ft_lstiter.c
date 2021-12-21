@@ -6,13 +6,13 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 15:05:31 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/20 15:05:44 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/21 09:13:13 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{
