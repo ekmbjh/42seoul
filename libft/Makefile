@@ -14,8 +14,7 @@ NAME		= libft.a
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
-LIB			= ar -rcs
-LIB1		= ranlib
+AR			= ar -rcs
 RM			= rm -f
 
 INCS		= libft.h
@@ -36,12 +35,10 @@ OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
 all: 		$(NAME)
 
 $(NAME):	$(OBJS) $(INCS)
-			$(LIB)	$(NAME) $(OBJS)
-			$(LIB1) $(NAME)
+			$(AR)	$(NAME) $(OBJS)
 
 bonus:		$(NAME) $(OBJS_BONUS)
-			$(LIB)	$(NAME) $(OBJS_BONUS)
-			$(LIB1) $(NAME)
+			$(AR)	$(NAME) $(OBJS_BONUS)
 
 .c.o: 		
 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
