@@ -6,13 +6,12 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 12:39:42 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/16 09:28:09 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/21 10:09:17 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// recursively count integer size
 int	ft_countsize(long int n)
 {
 	if (n < 0)
@@ -23,7 +22,6 @@ int	ft_countsize(long int n)
 		return (1 + ft_countsize(n / 10));
 }
 
-// recursively convert integer to string
 void	ft_convbase(long int n, char *number, long int i)
 {
 	if (n < 0)

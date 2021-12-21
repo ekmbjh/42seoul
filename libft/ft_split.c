@@ -6,7 +6,7 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 15:29:02 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/21 09:16:33 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/21 09:55:51 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,20 @@ static unsigned int	ft_get_nb_strs(char const *s, char c)
 	unsigned int	i;
 	unsigned int	cnt_str;
 
-	if (!s[0])
-		return (0);
 	i = 0;
 	cnt_str = 0;
-	while (s[i] && s[i] == c)
-		i++;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] != c)
 		{
 			cnt_str++;
-			while (s[i] && s[i] == c)
+			while (s[i] && s[i] != c)
 				i++;
-			continue ;
+			if (s[i] == '\0')
+				break ;
 		}
 		i++;
 	}
-	if (s[i - 1] != c)
-		cnt_str++;
 	return (cnt_str);
 }
 
