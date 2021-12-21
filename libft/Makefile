@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libft.a 
+NAME		= libft.a
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 LIB			= ar -rcs
 LIB1		= ranlib
-RM			= /bin/rm -f
+RM			= rm -f
 
 INCS		= libft.h
 SRCS		= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
