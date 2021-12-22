@@ -6,7 +6,7 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 10:35:01 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/21 11:07:07 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/22 11:35:35 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	size_t	i;
-	int		sign;
-	int		total;
+	unsigned long long int	i;
+	int						sign;
+	unsigned long long int	total;
 
 	i = 0;
 	sign = 1;
