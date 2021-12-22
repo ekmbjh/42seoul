@@ -6,11 +6,66 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 15:29:02 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/21 14:09:23 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/22 11:03:50 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	**free_malloc(char **tab)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+	return (NULL);
+}
+
+static void	get_str_strlen(char **next_str, unsigned int *strlen,
+	char c)
+{
+	unsigned int	i;
+
+	*next_str += *strlen;
+	*strlen = 0;
+	i = 0;
+	while (**next_str && **next_str == c)
+		(*next_str)++;
+	while ((*next_str)[i])
+	{
+		if ((*next_str)[i] == c)
+			return ;
+		(*strlen)++;
+		i++;
+	}
+}
+
+static char **input_tab(char **tab, char const *s, char c, unsigned int cnt_str)
+{
+	char			*next_str;
+	unsigned int	strlen;
+	unsigned int	i;
+
+	i = 0;
+	next_str = (char *)s;
+	strlen = 0;
+	while (i < cnt_str)
+	{
+		get_str_strlen(&next_str, &strlen, c);
+		tab[i] = (char *)malloc(sizeof(char) * (strlen + 1));
+		if (!tab[i])
+			return (free_malloc(tab));
+		ft_strlcpy(tab[i], next_str, strlen + 1);
+		i++;
+	}
+	tab[i] = NULL;
+	return (tab);
+}
 
 static unsigned int	ft_countstr(char const *s, char c)
 {
@@ -32,61 +87,6 @@ static unsigned int	ft_countstr(char const *s, char c)
 		i++;
 	}
 	return (cnt_str);
-}
-
-static void	ft_get_next_str(char **next_str, unsigned int *next_str_len,
-	char c)
-{
-	unsigned int	i;
-
-	*next_str += *next_str_len;
-	*next_str_len = 0;
-	i = 0;
-	while (**next_str && **next_str == c)
-		(*next_str)++;
-	while ((*next_str)[i])
-	{
-		if ((*next_str)[i] == c)
-			return ;
-		(*next_str_len)++;
-		i++;
-	}
-}
-
-static char	**ft_malloc_error(char **tab)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-	return (NULL);
-}
-
-static char **input_tab(char **tab, char const *s, char c, unsigned int cnt_str)
-{
-	char			*next_str;
-	unsigned int	next_str_len;
-	unsigned int	i;
-
-	i = 0;
-	next_str = (char *)s;
-	next_str_len = 0;
-	while (i < cnt_str)
-	{
-		ft_get_next_str(&next_str, &next_str_len, c);
-		tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1));
-		if (!tab[i])
-			return (ft_malloc_error(tab));
-		ft_strlcpy(tab[i], next_str, next_str_len + 1);
-		i++;
-	}
-	tab[i] = NULL;
-	return (tab);
 }
 
 char	**ft_split(char const *s, char c)
