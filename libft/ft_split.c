@@ -6,7 +6,7 @@
 /*   By: junbaek <junbaek@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 15:29:02 by junbaek           #+#    #+#             */
-/*   Updated: 2021/12/22 11:03:50 by junbaek          ###   ########.fr       */
+/*   Updated: 2021/12/22 11:11:24 by junbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	get_str_strlen(char **next_str, unsigned int *strlen,
 	}
 }
 
-static char **input_tab(char **tab, char const *s, char c, unsigned int cnt_str)
+static char	**input_tab(char **tab, char const *s, char c, unsigned int cnt_str)
 {
 	char			*next_str;
 	unsigned int	strlen;
