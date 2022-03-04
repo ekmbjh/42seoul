@@ -21,14 +21,17 @@ int	ft_has_nl(char *str)
 	return (0);
 }
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(char* str)
 {
-	char	*ptr;
+	size_t len;
 
-	ptr = str;
-	while (*ptr)
-		ptr++;
-	return ((size_t)(ptr - str));
+	len = 0;
+	while (*str != '\0')
+	{
+		str++;
+		len++;
+	}
+	return (len);
 }
 
 char	*ft_strdup(char *s1)
@@ -50,8 +53,6 @@ char	*ft_strdup(char *s1)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*s1ptr;
-	char	*s3ptr;
 	char	*s3;
 
 	if (!s1 && !s2)
@@ -63,14 +64,12 @@ char	*ft_strjoin(char *s1, char *s2)
 	s3 = malloc (sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!s3)
 		return (free(s1), NULL);
-	s1ptr = s1;
-	s3ptr = s3;
 	while (*s1)
 		*s3++ = *s1++;
 	while (*s2)
 		*s3++ = *s2++;
 	*s3 = '\0';
-	return (free(s1ptr), s3ptr);
+	return (s3);
 }
 
 char	*ft_substr(char *s, size_t start, size_t len)
